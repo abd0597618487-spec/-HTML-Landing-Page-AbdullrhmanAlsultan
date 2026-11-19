@@ -1,30 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Define the character encoding and responsive viewport. -->
+    <!-- Set character encoding and responsive screen settings. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Set the title shown in the browser tab. -->
+    <!-- Set the browser tab title. -->
     <title>Explore the Mountains</title>
 
-    <!-- Add page styles to control layout, colors, and responsiveness. -->
+    <!-- Define the CSS styles for the landing page. -->
     <style>
-        /* Apply consistent sizing and remove the browser's default spacing. */
+
+        /* Reset default browser spacing and sizing. */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* Set the main font and the default page appearance. */
+        /* Set the general page font and colors. */
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #ffffff;
             background-color: #111111;
         }
 
-        /* Keep the navigation content centered and spaced. */
+        /* Style the navigation bar at the top of the page. */
         .navbar {
             position: absolute;
             top: 0;
@@ -37,7 +40,7 @@
             padding: 26px 7%;
         }
 
-        /* Style the website name. */
+        /* Style the website logo. */
         .logo {
             color: #ffffff;
             font-size: 22px;
@@ -46,14 +49,14 @@
             text-decoration: none;
         }
 
-        /* Arrange navigation links in one row. */
+        /* Arrange navigation links horizontally. */
         .nav-links {
             display: flex;
             gap: 28px;
             list-style: none;
         }
 
-        /* Style each navigation link. */
+        /* Style the navigation links. */
         .nav-links a {
             color: #ffffff;
             font-size: 14px;
@@ -61,31 +64,39 @@
             transition: color 0.3s ease;
         }
 
-        /* Change the link color when the pointer hovers over it. */
+        /* Change link color when hovering. */
         .nav-links a:hover {
             color: #d7d7d7;
         }
 
-        /* Create the large hero section and use the supplied image as its background. */
+        /* Create the main landing section and display the background image. */
         .hero {
             position: relative;
             display: flex;
             align-items: center;
             min-height: 100vh;
             padding: 120px 10%;
+
+            /* Load the image from the same folder as index.html. */
             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.48)),
-                url("assets/landing.jpg");
+                linear-gradient(
+                    rgba(0, 0, 0, 0.30),
+                    rgba(0, 0, 0, 0.45)
+                ),
+                url("./landing.jpg");
+
+            /* Center and cover the entire hero section with the image. */
             background-position: center;
             background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        /* Limit the width of the hero text for comfortable reading. */
+        /* Set the width of the main content. */
         .hero-content {
             max-width: 650px;
         }
 
-        /* Style the small introductory line above the main heading. */
+        /* Style the introductory text. */
         .eyebrow {
             margin-bottom: 18px;
             font-size: 13px;
@@ -94,7 +105,7 @@
             text-transform: uppercase;
         }
 
-        /* Make the main heading large and clear. */
+        /* Style the main heading. */
         .hero h1 {
             margin-bottom: 22px;
             font-size: clamp(42px, 7vw, 82px);
@@ -111,7 +122,7 @@
             line-height: 1.7;
         }
 
-        /* Style the call-to-action link as a button. */
+        /* Style the Discover More button. */
         .hero-button {
             display: inline-block;
             padding: 14px 28px;
@@ -125,13 +136,13 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Add a simple hover effect to the button. */
+        /* Change button appearance when hovering. */
         .hero-button:hover {
             color: #ffffff;
             background-color: transparent;
         }
 
-        /* Style the small footer text at the bottom of the page. */
+        /* Style the footer at the bottom of the page. */
         .footer {
             position: absolute;
             right: 7%;
@@ -143,41 +154,51 @@
             text-align: center;
         }
 
-        /* Adjust the navigation and text for small screens. */
+        /* Make the page responsive on mobile devices. */
         @media (max-width: 600px) {
+
+            /* Adjust the navigation bar for smaller screens. */
             .navbar {
                 align-items: flex-start;
                 gap: 18px;
                 padding: 22px 6%;
             }
 
+            /* Allow navigation links to wrap on mobile. */
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: flex-end;
                 gap: 12px;
             }
 
+            /* Reduce navigation link size on mobile. */
             .nav-links a {
                 font-size: 12px;
             }
 
+            /* Adjust hero section spacing on mobile. */
             .hero {
                 padding: 130px 7% 90px;
             }
 
+            /* Adjust paragraph size on mobile. */
             .hero p {
                 font-size: 15px;
             }
         }
+
     </style>
 </head>
 
 <body>
-    <!-- Website header: logo and navigation menu. -->
-    <header class="navbar">
-        <a class="logo" href="#">MOUNTAIN</a>
 
-        <!-- Main navigation links. -->
+    <!-- Header section containing the logo and navigation menu. -->
+    <header class="navbar">
+
+        <!-- Website logo. -->
+        <a class="logo" href="#home">MOUNTAIN</a>
+
+        <!-- Main navigation menu. -->
         <nav aria-label="Main navigation">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -185,33 +206,50 @@
                 <li><a href="#discover">Discover</a></li>
             </ul>
         </nav>
+
     </header>
 
-    <!-- Main landing section containing the background image and welcome text. -->
+    <!-- Main content of the landing page. -->
     <main>
+
+        <!-- Hero section displaying the mountain background image. -->
         <section class="hero" id="home">
-            <div class="hero-content">
-                <!-- Short introductory text. -->
-                <div class="eyebrow">Discover the beauty of nature</div>
 
-                <!-- Main page heading. -->
-                <h1>Explore<br>Beyond Limits</h1>
+            <!-- Content displayed over the background image. -->
+            <div class="hero-content" id="discover">
 
-                <!-- Brief description of the landing page. -->
+                <!-- Introductory text above the main heading. -->
+                <div class="eyebrow">
+                    Discover the beauty of nature
+                </div>
+
+                <!-- Main heading of the landing page. -->
+                <h1>
+                    Explore<br>
+                    Beyond Limits
+                </h1>
+
+                <!-- Description of the website. -->
                 <p>
                     Find inspiration in the quiet beauty of the mountains.
                     Take a moment, enjoy the view, and discover a new adventure.
                 </p>
 
-                <!-- Call-to-action link that moves to the about section. -->
-                <a class="hero-button" href="#about">DISCOVER MORE</a>
+                <!-- Button linking to the About section. -->
+                <a class="hero-button" href="#about">
+                    DISCOVER MORE
+                </a>
+
             </div>
 
-            <!-- Small footer note displayed over the hero image. -->
+            <!-- Footer section containing copyright information. -->
             <div class="footer" id="about">
                 © 2026 MOUNTAIN. ALL RIGHTS RESERVED.
             </div>
+
         </section>
+
     </main>
+
 </body>
 </html>
